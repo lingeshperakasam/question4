@@ -1,10 +1,18 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import os
+
+# Get the current directory path
+current_directory = os.path.dirname(os.path.abspath(__file__))
+
+# Construct the relative paths to the CSV files
+credit_card_csv_path = os.path.join(current_directory, 'credit_card_complaints.csv')
+bank_account_csv_path = os.path.join(current_directory, 'bank_account_or_service_complaints.csv')
 
 # Read the CSV files
-credit_card_df = pd.read_csv(r'C:\Users\tbxbu\Desktop\Take Home Assessment\Question 1\credit_card_complaints.csv')
-bank_account_df = pd.read_csv(r'C:\Users\tbxbu\Desktop\Take Home Assessment\Question 1\bank_account_or_service_complaints.csv')
+credit_card_df = pd.read_csv(credit_card_csv_path)
+bank_account_df = pd.read_csv(bank_account_csv_path)
 
 # Define the response types of interest
 response_types = [
